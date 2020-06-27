@@ -23,7 +23,6 @@
             android:textOff="VIỆT NAM"
             android:showText="true"
             android:textOn="Thế Giới"
-
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

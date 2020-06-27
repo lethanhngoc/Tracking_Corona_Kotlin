@@ -3,6 +3,9 @@
     <item android:id="@+id/item_home"
         android:title="Home"
         android:icon="@drawable/home"/>
+    <item android:id="@+id/item_list"
+        android:title="Detail"
+        android:icon="@drawable/info"/>
     <item android:id="@+id/item_chart"
         android:title="Chart"
         android:icon="@drawable/chart"/>
