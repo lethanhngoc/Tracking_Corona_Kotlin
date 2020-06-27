@@ -5,14 +5,11 @@
         android:icon="@drawable/home"/>
     <item android:id="@+id/item_list"
         android:title="Detail"
-        android:icon="@drawable/info"/>
-    <item android:id="@+id/item_chart"
-        android:title="Chart"
-        android:icon="@drawable/chart"/>
-    <item android:id="@+id/item_game"
-        android:title="Game"
-        android:icon="@drawable/game"/>
-    <item android:id="@+id/item_info"
-        android:title="Game"
-        android:icon="@drawable/info"/>
+        android:icon="@drawable/view"/>
+    <item android:id="@+id/item_map"
+        android:title="Map"
+        android:icon="@drawable/location"/>
+    <item android:id="@+id/item_info_treatment"
+        android:title="Information"
+        android:icon="@drawable/doctor"/>
 </menu>

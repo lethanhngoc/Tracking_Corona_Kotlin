@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Tracking_Fragment"
+        tools:context="Fragment.Tracking"
         android:background="#fff">
 
         <Switch
@@ -20,7 +20,7 @@
             android:switchMinWidth="25mm"
             android:thumb="@drawable/thumb"
             android:track="@drawable/track"
-            android:textOff="VIỆT NAM"
+            android:textOff="Việt Nam"
             android:showText="true"
             android:textOn="Thế Giới"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -110,7 +110,7 @@
                         android:background="@drawable/custom_textview_case"
                         android:layout_gravity="bottom|center"
                         android:gravity="center"
-                        android:text="+ 3"
+                        android:text="+ "
                         android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold"></TextView>
@@ -160,7 +160,7 @@
                         android:background="@drawable/custom_textview_death"
                         android:layout_gravity="bottom|center"
                         android:gravity="center"
-                        android:text="+ 0"
+                        android:text="+ "
                         android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold"></TextView>
@@ -228,7 +228,7 @@
                         android:background="@drawable/custom_textview_recovered"
                         android:layout_gravity="bottom|center"
                         android:gravity="center"
-                        android:text="+ 20"
+                        android:text="+ "
                         android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold"></TextView>
@@ -280,7 +280,7 @@
                         android:background="@drawable/custom_textview_active"
                         android:layout_gravity="bottom|center"
                         android:gravity="center"
-                        android:text="+ 0"
+                        android:text="+ "
                         android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold"></TextView>
@@ -330,7 +330,7 @@
                         android:background="@drawable/custom_textview_serious"
                         android:layout_gravity="bottom|center"
                         android:gravity="center"
-                        android:text="+ 0"
+                        android:text="+ "
                         android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold"></TextView>
@@ -340,6 +340,18 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnTrack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:background="@color/color_one"
+            android:text="Track countries"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:onClick="goTrackCountries" />
         <androidx.cardview.widget.CardView
             android:layout_width="350dp"
             android:layout_height="200dp"

@@ -1,59 +1,85 @@
 package com.example.tracking_corona
 
+import Fragment.ListDetail
+import Fragment.Map
+import Fragment.Tracking
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.widget.CompoundButton
-import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import kotlinx.android.synthetic.main.fragment_tracking.*
-import org.json.JSONException
-import org.json.JSONObject
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var viewPager: ViewPager
+    private lateinit var bottomNavigationView: BottomNavigationView
+    var currentFragment : Fragment = Tracking()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_tracking)
+        setContentView(R.layout.activity_main)
 
-        var url: String = "https://disease.sh/v2/countries/VietNam";
-        fetchData(url)
-        toggleAlarm.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                Log.d("alarmCheck", "ALARM SET TO TRUE")
-                url = "https://disease.sh/v2/all";
-                fetchData(url)
-            } else {
-                Log.d("alarmCheck", "ALARM SET TO FALSE")
-                url = "https://disease.sh/v2/countries/VietNam";
-                fetchData(url)
+        supportActionBar?.hide()
+        viewPager = findViewById(R.id.viewPager)
+
+        val fragmentAdapter  =
+            ViewAdapter(supportFragmentManager)
+        viewPager.adapter= fragmentAdapter
+        viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            override fun onPageScrollStateChanged(state: Int) {
             }
+
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+            override fun onPageSelected(position: Int) {
+                bottomNavigationView.menu.getItem(position).isChecked = true
+            }
+
         })
-
-    }
-
-    private fun fetchData(url : String){
-        val request = StringRequest(
-            Request.Method.GET, url, Response.Listener { response ->
-                try {
-                    val jsonObject = JSONObject(response)
-                    tvaffected.text = jsonObject.getString("cases") ;
-                    tvdeath.text = jsonObject.getString("deaths")
-                    tvrecovered.text = jsonObject.getString("recovered")
-                    tvactive.text = jsonObject.getString("active")
-                    tvserious.text = jsonObject.getString("critical")
-                } catch (e: JSONException) {
-                    e.printStackTrace()
+        bottomNavigationView =findViewById(R.id.navBottom)
+        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId){
+                R.id.item_home ->{
+                    viewPager.currentItem =0
+                    replaceFragment(Tracking())
+                    currentFragment = Tracking()
+                    return@setOnNavigationItemSelectedListener true
                 }
-            },
-            Response.ErrorListener { error ->
-                Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
-            })
+                R.id.item_list ->{
+                    viewPager.currentItem =1
+                    replaceFragment(ListDetail())
+                    currentFragment = ListDetail()
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.item_map ->{
+                    viewPager.currentItem =2
+                    replaceFragment(Map())
+                    currentFragment = Map()
+                    return@setOnNavigationItemSelectedListener true
+                }
+                else ->{
+                    viewPager.currentItem =3
+                    replaceFragment(Map())
+                    currentFragment = Map()
+                    return@setOnNavigationItemSelectedListener true
+                }
+            }
 
-        val requestQueue = Volley.newRequestQueue(this)
-        requestQueue.add(request)
+        }
     }
+    private fun replaceFragment(fragment: Fragment){
+        val fragmentTransaction =supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer,fragment)
+        fragmentTransaction.commit()
+    }
+
+
 }

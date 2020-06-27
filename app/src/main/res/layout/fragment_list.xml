@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".List_Fragment">
+        tools:context="Fragment.ListDetail">
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
