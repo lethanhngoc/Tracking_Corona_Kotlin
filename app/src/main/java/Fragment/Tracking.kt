@@ -55,18 +55,27 @@ class Tracking: Fragment() {
             val vnYesterdayResp = withContext(Dispatchers.IO) {
                 CountriesService.getApi().getCountryVietNamYesterday()
             }
-            tvaffected.text = vnResp.cases.toString();
-            tvdeath.text = vnResp.deaths.toString();
-            tvrecovered.text = vnResp.recovered.toString();
-            tvactive.text = vnResp.active.toString();
-            tvserious.text = vnResp.critical.toString();
-            tvaffectedDaily.text = vnResp.todayCases.toString()
-            tvdeathDaily.text = vnResp.todayDeaths.toString()
-            tvrecoveredDaily.text = vnResp.todayRecovered.toString()
-            tvactiveDaily.text = (vnResp.active - vnYesterdayResp.active).toString()
-            tvseriousDaily.text = (vnResp.critical - vnYesterdayResp.critical).toString()
+            tvaffected.text = vnResp.cases.toString()
+            tvdeath.text = vnResp.deaths.toString()
+            tvrecovered.text = vnResp.recovered.toString()
+            tvactive.text = vnResp.active.toString()
+            tvserious.text = vnResp.critical.toString()
+            tvaffectedDaily.text = "+ ".plus(vnResp.todayCases.toString())
+            tvdeathDaily.text = "+ ".plus(vnResp.todayDeaths.toString())
+            tvrecoveredDaily.text = "+ ".plus(vnResp.todayRecovered.toString())
+            if(vnResp.active - vnYesterdayResp.active >= 0){
+                tvactiveDaily.text = "+ ".plus((vnResp.active - vnYesterdayResp.active).toString())
+            }else{
+                tvactiveDaily.text = (vnResp.active - vnYesterdayResp.active).toString()
+            }
 
+            if(vnResp.critical - vnYesterdayResp.critical >= 0){
+                tvseriousDaily.text = "+ ".plus((vnResp.critical - vnYesterdayResp.critical).toString())
+            }else{
+                tvseriousDaily.text = (vnResp.critical - vnYesterdayResp.critical).toString()
+            }
 
+            piechart.clearChart()
             piechart.addPieSlice(
                 PieModel("Recovered", vnResp.recovered.toFloat(),Color.parseColor("#66BB6A"))
             )
@@ -84,17 +93,25 @@ class Tracking: Fragment() {
             piechart.startAnimation();
             toggleAlarm.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
-                    tvaffected.text = allResp.cases.toString();
-                    tvdeath.text = allResp.deaths.toString();
-                    tvrecovered.text = allResp.recovered.toString();
-                    tvactive.text = allResp.active.toString();
-                    tvserious.text = allResp.critical.toString();
+                    tvaffected.text = allResp.cases.toString()
+                    tvdeath.text = allResp.deaths.toString()
+                    tvrecovered.text = allResp.recovered.toString()
+                    tvactive.text = allResp.active.toString()
+                    tvserious.text = allResp.critical.toString()
 
-                    tvaffectedDaily.text = allResp.todayCases.toString()
-                    tvdeathDaily.text = allResp.todayDeaths.toString()
-                    tvrecoveredDaily.text = allResp.todayRecovered.toString()
-                    tvactiveDaily.text = (allResp.active - allYesterdayResp.active).toString()
-                    tvseriousDaily.text = (allResp.critical - allYesterdayResp.critical).toString()
+                    tvaffectedDaily.text = "+ ".plus(allResp.todayCases.toString())
+                    tvdeathDaily.text = "+ ".plus(allResp.todayDeaths.toString())
+                    tvrecoveredDaily.text = "+ ".plus(allResp.todayRecovered.toString())
+                    if(allResp.active - allYesterdayResp.active >= 0){
+                        tvactiveDaily.text = "+ ".plus((allResp.active - allYesterdayResp.active).toString())
+                    }else{
+                        tvactiveDaily.text = (allResp.active - allYesterdayResp.active).toString()
+                    }
+                    if(allResp.critical - allYesterdayResp.critical >= 0){
+                        tvseriousDaily.text = "+ ".plus((allResp.critical - allYesterdayResp.critical).toString())
+                    }else{
+                        tvseriousDaily.text = (allResp.critical - allYesterdayResp.critical).toString()
+                    }
 
                     piechart.clearChart()
                     piechart.addPieSlice(
@@ -113,17 +130,25 @@ class Tracking: Fragment() {
 
                     piechart.startAnimation();
                 } else {
-                    tvaffected.text = vnResp.cases.toString();
-                    tvdeath.text = vnResp.deaths.toString();
-                    tvrecovered.text = vnResp.recovered.toString();
-                    tvactive.text = vnResp.active.toString();
-                    tvserious.text = vnResp.critical.toString();
+                    tvaffected.text = vnResp.cases.toString()
+                    tvdeath.text = vnResp.deaths.toString()
+                    tvrecovered.text = vnResp.recovered.toString()
+                    tvactive.text = vnResp.active.toString()
+                    tvserious.text = vnResp.critical.toString()
 
-                    tvaffectedDaily.text = vnResp.todayCases.toString()
-                    tvdeathDaily.text = vnResp.todayDeaths.toString()
-                    tvrecoveredDaily.text = vnResp.todayRecovered.toString()
-                    tvactiveDaily.text = (vnResp.active - vnYesterdayResp.active).toString()
-                    tvseriousDaily.text = (vnResp.critical - vnYesterdayResp.critical).toString()
+                    tvaffectedDaily.text = "+ ".plus(vnResp.todayCases.toString())
+                    tvdeathDaily.text = "+ ".plus(vnResp.todayDeaths.toString())
+                    tvrecoveredDaily.text = "+ ".plus(vnResp.todayRecovered.toString())
+                    if(vnResp.active - vnYesterdayResp.active >= 0){
+                        tvactiveDaily.text = "+ ".plus((vnResp.active - vnYesterdayResp.active).toString())
+                    }else{
+                        tvactiveDaily.text = (vnResp.active - vnYesterdayResp.active).toString()
+                    }
+                    if(vnResp.critical - vnYesterdayResp.critical >= 0){
+                        tvseriousDaily.text = "+ ".plus((vnResp.critical - vnYesterdayResp.critical).toString())
+                    }else{
+                        tvseriousDaily.text = (vnResp.critical - vnYesterdayResp.critical).toString()
+                    }
 
                     piechart.clearChart()
                     piechart.addPieSlice(

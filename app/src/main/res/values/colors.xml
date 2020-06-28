@@ -4,13 +4,11 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-
-
     <color name="casee">#FFBD4C</color>
     <color name="deal">#FF5959</color>
     <color name="recover">#4CD97B</color>
-    <color name="active">#4CB5FF</color>
-    <color name="serious">#8359FF</color>
+    <color name="active">#4169E2</color>
+    <color name="serious">#65008C</color>
 
     <color name="light_red">#FFCDD2</color>
     <color name="light_green">#C8E6C9</color>
@@ -29,7 +27,7 @@
     <color name="color_two">#E3E0E0</color>
 
     <color name="cases">#FFA726</color>
-    <color name="recovered">#66BB6A</color>
-    <color name="deaths">#EF5350</color>
+    <color name="recovered">#6C912A</color>
+    <color name="deaths">#C93D3C</color>
 <!--    <color name="active">#29B6F6</color>-->
 </resources>

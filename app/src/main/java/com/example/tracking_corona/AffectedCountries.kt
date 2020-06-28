@@ -40,7 +40,7 @@ class AffectedCountries : AppCompatActivity(){
 
         fetchData();
 
-        supportActionBar?.setTitle("Affected Countries")
+        supportActionBar?.setTitle("Các quốc gia ảnh hưởng")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 

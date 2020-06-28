@@ -4,7 +4,7 @@
     android:shape="rectangle">
     <!-- Set màu nền-->
     <solid
-        android:color="#1A8C03" >
+        android:color="#6C912A" >
     </solid>
 
     <!-- đặt thuộc tính màu và độ rộng của đường viền -->
