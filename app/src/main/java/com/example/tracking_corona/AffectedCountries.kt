@@ -85,32 +85,5 @@ class AffectedCountries : AppCompatActivity(){
             loader.stop()
             loader.setVisibility(View.GONE)
         }
-//        val url = "https://corona.lmao.ninja/v2/countries/"
-//        loader.start()
-//        val request = StringRequest(
-//            Request.Method.GET, url,
-//            Response.Listener { response ->
-//                try {
-//
-//                    val arrayTutorialType =object: TypeToken<ArrayList<CountryModel>>() {}.type;
-//                    var countries :ArrayList<CountryModel> = Gson().fromJson(response,arrayTutorialType)
-//                    countryModelsList.addAll(countries)
-//
-//                    myCustomAdapter = CountriesAdapter(this@AffectedCountries, countryModelsList)
-//                    listView.setAdapter(myCustomAdapter)
-//                    loader.stop()
-//                    loader.setVisibility(View.GONE)
-//                } catch (e: JSONException) {
-//                    e.printStackTrace()
-//                    loader.stop()
-//                    loader.setVisibility(View.GONE)
-//                }
-//            }, Response.ErrorListener { error ->
-//                loader.stop()
-//                loader.setVisibility(View.GONE)
-//                Toast.makeText(this@AffectedCountries, error.message, Toast.LENGTH_SHORT).show()
-//            })
-//        val requestQueue = Volley.newRequestQueue(this)
-//        requestQueue.add(request)
     }
 }
