@@ -40,7 +40,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView"
-            android:layout_margin="16dp">
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="5dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -50,6 +53,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tvConfirmed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Confirmed"
@@ -66,9 +70,10 @@
                     android:tint="@color/dark_red" />
 
                 <TextView
-                    android:id="@+id/confirmedTv"
+                    android:id="@+id/tvconfirmed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="77"
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
                     android:textColor="@color/dark_red"
@@ -102,11 +107,12 @@
                     android:tint="@color/dark_blue" />
 
                 <TextView
-                    android:id="@+id/activeTv"
+                    android:id="@+id/tvactive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
+                    android:text="77"
                     android:textColor="@color/dark_blue"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -139,11 +145,12 @@
                     android:tint="@color/dark_green" />
 
                 <TextView
-                    android:id="@+id/recoveredTv"
+                    android:id="@+id/tvrecovered"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
+                    android:text="77"
                     android:textColor="@color/dark_green"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -176,11 +183,12 @@
                     android:tint="@color/dark_yellow" />
 
                 <TextView
-                    android:id="@+id/deceasedTv"
+                    android:id="@+id/tvdeceased"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
+                    android:text="77"
                     android:textColor="@color/dark_yellow"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -188,13 +196,72 @@
 
             </LinearLayout>
         </LinearLayout>
-
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/listheader"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/topContainer"
-            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="STATE/UT"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="CONF"
+                android:textAllCaps="true"
+                android:textColor="#ff00"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:text="ACTV"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold" />
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="RCVRD"
+                android:textAllCaps="true"
+                android:textColor="@color/dark_green"
+                android:textStyle="bold" />
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="DCSD"
+                android:textAllCaps="true"
+                android:textColor="@color/dark_yellow"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listheader"
             android:layout_marginBottom="16dp"
             tools:listheader="@layout/list_header" />
     </RelativeLayout>

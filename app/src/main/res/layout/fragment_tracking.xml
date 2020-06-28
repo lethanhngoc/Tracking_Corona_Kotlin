@@ -340,19 +340,9 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
-            android:background="@color/color_one"
-            android:text="Track countries"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:padding="5dp"
-            android:onClick="goTrackCountries" />
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="350dp"
             android:layout_height="200dp"
             android:layout_below="@+id/daily_case"
@@ -365,8 +355,112 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="27dp"
             android:layout_marginRight="27dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+            <org.eazegraph.lib.charts.PieChart
+                android:id="@+id/piechart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:gravity="center_vertical">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/recovered"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recovered"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/active"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/deaths"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deaths"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/serious"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Critical"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/btnTrack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/cardView"
+            android:background="@color/color_one"
+            android:text="Track countries"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:onClick="goTrackCountries" />
         <TextView
             android:id="@+id/daily_case"
             android:layout_width="229dp"

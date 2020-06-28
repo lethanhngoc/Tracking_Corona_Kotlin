@@ -2,6 +2,7 @@ package Fragment
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.example.tracking_corona.R
 import com.example.tracking_corona.service.CountriesService
 import kotlinx.android.synthetic.main.fragment_tracking.*
 import kotlinx.coroutines.*
+import org.eazegraph.lib.models.PieModel
 
 class Tracking: Fragment() {
 
@@ -63,6 +65,23 @@ class Tracking: Fragment() {
             tvrecoveredDaily.text = vnResp.todayRecovered.toString()
             tvactiveDaily.text = (vnResp.active - vnYesterdayResp.active).toString()
             tvseriousDaily.text = (vnResp.critical - vnYesterdayResp.critical).toString()
+
+
+            piechart.addPieSlice(
+                PieModel("Recovered", vnResp.recovered.toFloat(),Color.parseColor("#66BB6A"))
+            )
+
+            piechart.addPieSlice(
+                PieModel("Active", vnResp.active.toFloat(),Color.parseColor("#4CB5FF"))
+            )
+            piechart.addPieSlice(
+                PieModel("Deaths", vnResp.deaths.toFloat(),Color.parseColor("#EF5350"))
+            )
+            piechart.addPieSlice(
+                PieModel("Critical", vnResp.critical.toFloat(),Color.parseColor("#8359FF"))
+            )
+
+            piechart.startAnimation();
             toggleAlarm.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
                     tvaffected.text = allResp.cases.toString();
@@ -76,6 +95,23 @@ class Tracking: Fragment() {
                     tvrecoveredDaily.text = allResp.todayRecovered.toString()
                     tvactiveDaily.text = (allResp.active - allYesterdayResp.active).toString()
                     tvseriousDaily.text = (allResp.critical - allYesterdayResp.critical).toString()
+
+                    piechart.clearChart()
+                    piechart.addPieSlice(
+                        PieModel("Recovered", allResp.recovered.toFloat(),Color.parseColor("#66BB6A"))
+                    )
+
+                    piechart.addPieSlice(
+                        PieModel("Active", allResp.active.toFloat(),Color.parseColor("#4CB5FF"))
+                    )
+                    piechart.addPieSlice(
+                        PieModel("Deaths", allResp.deaths.toFloat(),Color.parseColor("#EF5350"))
+                    )
+                    piechart.addPieSlice(
+                        PieModel("Critical", allResp.critical.toFloat(),Color.parseColor("#8359FF"))
+                    )
+
+                    piechart.startAnimation();
                 } else {
                     tvaffected.text = vnResp.cases.toString();
                     tvdeath.text = vnResp.deaths.toString();
@@ -88,6 +124,23 @@ class Tracking: Fragment() {
                     tvrecoveredDaily.text = vnResp.todayRecovered.toString()
                     tvactiveDaily.text = (vnResp.active - vnYesterdayResp.active).toString()
                     tvseriousDaily.text = (vnResp.critical - vnYesterdayResp.critical).toString()
+
+                    piechart.clearChart()
+                    piechart.addPieSlice(
+                        PieModel("Recovered", vnResp.recovered.toFloat(),Color.parseColor("#66BB6A"))
+                    )
+
+                    piechart.addPieSlice(
+                        PieModel("Active", vnResp.active.toFloat(),Color.parseColor("#4CB5FF"))
+                    )
+                    piechart.addPieSlice(
+                        PieModel("Deaths", vnResp.deaths.toFloat(),Color.parseColor("#EF5350"))
+                    )
+                    piechart.addPieSlice(
+                        PieModel("Critical", vnResp.critical.toFloat(),Color.parseColor("#8359FF"))
+                    )
+
+                    piechart.startAnimation();
                 }
             })
         }
