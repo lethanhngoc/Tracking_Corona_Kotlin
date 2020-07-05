@@ -1,8 +1,9 @@
 package com.example.tracking_corona
 
 import Fragment.ListDetail
-import Fragment.Map
+import Fragment.map.Map
 import Fragment.Tracking
+import Fragment.info_treatment
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
@@ -67,8 +68,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 else ->{
                     viewPager.currentItem =3
-                    replaceFragment(Map())
-                    currentFragment = Map()
+                    replaceFragment(info_treatment())
+                    currentFragment = info_treatment()
                     return@setOnNavigationItemSelectedListener true
                 }
             }
