@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Country"
+            android:text="Quốc gia"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Cases"
+            android:text="Tổng ca nhiễm"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
@@ -93,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Today Cases"
+            android:text="Ca nhiễm hôm nay"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
@@ -130,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Deaths"
+            android:text="Tổng ca chết"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
@@ -167,7 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Today Deaths"
+            android:text="Chết hôm nay"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
@@ -204,7 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Recovered"
+            android:text="Hồi phục"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
@@ -241,7 +241,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Active"
+            android:text="Đang nhiễm"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
@@ -278,7 +278,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Critical"
+            android:text="Nguy hiểm"
             android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView

@@ -2,7 +2,7 @@ package com.example.tracking_corona
 
 import Fragment.ListDetail
 import Fragment.Tracking
-import Fragment.Map
+import Fragment.map.Map
 import Fragment.info_treatment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
