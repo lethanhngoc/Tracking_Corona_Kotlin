@@ -5,7 +5,7 @@ import com.example.tracking_corona.model.Countries
 import com.example.tracking_corona.model.CountryModel
 import retrofit2.http.GET
 
-interface CountriesApi {
+interface CountriesApi : MapApi {
     @GET("all")
     suspend fun getAllCountries(): Countries
 

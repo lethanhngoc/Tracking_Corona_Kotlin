@@ -38,7 +38,10 @@ class AffectedCountries : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_affected_countries)
 
+        loader.start()
         fetchData();
+        loader.stop()
+        loader.setVisibility(View.GONE)
 
         supportActionBar?.setTitle("Các quốc gia ảnh hưởng")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -73,7 +76,6 @@ class AffectedCountries : AppCompatActivity(){
     private fun fetchData() {
 
         scope = CoroutineScope(Dispatchers.Main)
-        loader.start()
         scope.launch {
             val CountriesResp = withContext(Dispatchers.IO) {
                 CountriesService.getApi().getCountries()
@@ -82,8 +84,6 @@ class AffectedCountries : AppCompatActivity(){
 
             myCustomAdapter = CountriesAdapter(this@AffectedCountries, countryModelsList)
             listView.setAdapter(myCustomAdapter)
-            loader.stop()
-            loader.setVisibility(View.GONE)
         }
     }
 }
