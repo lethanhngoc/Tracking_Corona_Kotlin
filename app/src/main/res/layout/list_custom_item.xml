@@ -1,26 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="5dp">
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="55dp"
-        android:id="@+id/imageFlag"
-        android:padding="5dp"
-        />
+    android:layout_height="100dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/imageFlag"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:padding="5dp" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/tvCountryName"
-        android:layout_gravity="center_vertical"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="301dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toEndOf="@+id/imageFlag"
+        android:layout_toRightOf="@+id/imageFlag"
+        android:gravity="left"
+        android:padding="8dp"
+        android:paddingLeft="15dp"
         android:text="Country Name"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingLeft="15dp"/>
+        android:textStyle="bold" />
+    </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/affectedCt"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvCountryName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="right|center"
+            android:text="0"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:ignore="NotSibling" />
+
+        <TextView
+            android:id="@+id/activeCtDaily"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvCountryName"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="-14dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toRightOf="@+id/affectedCt"
+            android:gravity="left|center"
+            android:textColor="@color/dark_yellow"
+            android:textSize="15dp"
+
+            android:textStyle="bold"
+            tools:ignore="NotSibling" />
+
+        <TextView
+            android:id="@+id/recoveredCt"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvCountryName"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toRightOf="@+id/activeCtDaily"
+            android:gravity="right|center"
+            android:text="0"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:ignore="NotSibling" />
+
+        <TextView
+            android:id="@+id/recoveredCtDaily"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toRightOf="@+id/recoveredCt"
+            android:gravity="left|center"
+            android:textColor="@color/dark_green"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dealthCt"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/recoveredCtDaily"
+            android:layout_toRightOf="@+id/recoveredCtDaily"
+            android:gravity="right|center"
+            android:text="0"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dealthDaily"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toRightOf="@+id/dealthCt"
+            android:gravity="left|center"
+            android:textColor="@color/dark_red"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            >
+
+        <TextView
+            android:id="@+id/affectedtg"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center"
+            android:text="Đang nhiễm"
+            android:textSize="15dp"
+            android:textColor="@color/dark_yellow"
+             />
+
+        <TextView
+            android:id="@+id/recoveTg"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/affectedtg"
+            android:layout_toRightOf="@+id/affectedtg"
+            android:gravity="center"
+            android:text="Hồi phục"
+            android:textColor="@color/dark_green"
+            android:textSize="15dp"
+
+             />
+
+            <TextView
+                android:id="@+id/affectTg"
+                android:layout_width="134dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="12dp"
+                android:layout_toEndOf="@+id/recoveTg"
+                android:layout_toRightOf="@+id/recoveTg"
+                android:gravity="center"
+                android:text="Chết"
+                android:textColor="@color/dark_red"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
 
 </LinearLayout>

@@ -14,7 +14,7 @@
         android:padding="8dp"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
-        android:textStyle="bold" />
+         />
 
     <TextView
         android:id="@+id/confirmedTv"

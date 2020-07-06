@@ -22,7 +22,21 @@ class CountriesAdapter(val ctx: Context, val countryModelsList: List<CountryMode
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.list_custom_item, null, true)
         val tvCountryName = view.findViewById<TextView>(R.id.tvCountryName)
-        val imageView = view.findViewById<ImageView>(R.id.imageFlag)
+        val imageView = view.findViewById<ImageView>(R.id.imageFlag);
+
+        val dealthCt = view.findViewById<TextView>(R.id.dealthCt)
+        val dealthDaily = view.findViewById<TextView>(R.id.dealthDaily)
+        val recoveredCt = view.findViewById<TextView>(R.id.recoveredCt)
+        val recoveredCtDaily = view.findViewById<TextView>(R.id.recoveredCtDaily)
+        val affectedCt = view.findViewById<TextView>(R.id.affectedCt)
+        val affectedCtDaily = view.findViewById<TextView>(R.id.activeCtDaily)
+
+        dealthCt.text = countryModelsListFiltered[position].deaths.toString()
+        dealthDaily.text = " (+".plus(countryModelsListFiltered[position].todayDeaths.toString())+")"
+        recoveredCt.text = countryModelsListFiltered[position].recovered.toString()
+        recoveredCtDaily.text = " (+".plus(countryModelsListFiltered[position].todayRecovered.toString())+")"
+        affectedCt.text = countryModelsListFiltered[position].cases.toString()
+        affectedCtDaily.text = " (+".plus(countryModelsListFiltered[position].todayCases.toString())+")"
         tvCountryName.setText(countryModelsListFiltered[position].country)
         Glide.with(ctx).load(countryModelsListFiltered[position].countryInfo.flag).into(imageView)
         return view
