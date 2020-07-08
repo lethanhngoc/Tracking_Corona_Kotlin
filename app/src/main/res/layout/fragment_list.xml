@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
-            android:text="Last Updated"
+            android:text=""
             android:gravity="end"
             android:textAllCaps="true"
             android:textColor="@color/dark_green"

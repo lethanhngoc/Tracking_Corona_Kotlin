@@ -15,7 +15,7 @@ class DetailActivity : AppCompatActivity() {
         positionCountry = intent.extras?.getInt("position",0)!!;
 
         supportActionBar?.setTitle(
-            "Details of " + AffectedCountries.countryModelsList[positionCountry].country
+            "Chi tiết của " + AffectedCountries.countryModelsList[positionCountry].country
         )
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
