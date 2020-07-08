@@ -42,6 +42,4 @@ class info_treatment : Fragment() {
             startActivity(callIntent)
         }
     }
-
-
 }
