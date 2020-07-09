@@ -33,14 +33,33 @@ class info_treatment : Fragment() {
                 popupMenu.menuInflater.inflate(R.menu.drop_down_menu1,popupMenu.menu)
                 popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
                     when(item.itemId) {
-                        R.id.dropdown_menu1 ->
+                        R.id.dropdown_menu1 ->{
                             context?.let{ Toast.makeText(getContext(), "You Clicked : " + item.title, Toast.LENGTH_SHORT).show()}
+                            val callIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://ncovi.vnpt.vn/views/huongdan_1.html"))
+                            startActivity(callIntent)
+                        }
+
                         R.id.dropdown_menu2 ->
+                        {
                             context?.let{Toast.makeText(getContext(), "You Clicked : " + item.title, Toast.LENGTH_SHORT).show()}
+                            val callIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://ncovi.vnpt.vn/views/huongdan_2.html"))
+                            startActivity(callIntent)
+                        }
+
                     }
                     true
                 })
                 popupMenu.show()
+            }
+
+            btnCall.setOnClickListener {
+                val callIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:19009095"))
+                startActivity(callIntent)
+            }
+
+            btnMes.setOnClickListener {
+                val callIntent = Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:1900.9095"))
+                startActivity(callIntent)
             }
         }
 }
