@@ -74,7 +74,7 @@
                     android:id="@+id/tvconfirmed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="77"
+                    android:text=""
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
                     android:textColor="@color/dark_yellow"
@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
-                    android:text="77"
+                    android:text=""
                     android:textColor="@color/dark_blue"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -151,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
-                    android:text="77"
+                    android:text=""
                     android:textColor="@color/dark_green"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -189,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textAllCaps="true"
-                    android:text="77"
+                    android:text=""
                     android:textColor="@color/dark_red"
                     android:textSize="18sp"
                     android:textStyle="bold" />
