@@ -43,7 +43,7 @@ class Map: Fragment(), OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState)
         binding.mapView.onCreate(savedInstanceState);
         binding.mapView.onResume()
-
+        scope = CoroutineScope(Dispatchers.Main)
         try {
             MapsInitializer.initialize(getActivity());
         } catch ( e: GooglePlayServicesNotAvailableException) {
