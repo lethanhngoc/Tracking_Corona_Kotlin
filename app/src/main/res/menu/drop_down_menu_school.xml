@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dropdown_menu_school_1"
+        android:title="Khi học sinh bị ho, sốt, khó thở"
+        app:showAsAction="never"
+            >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_school_2"
+        android:title="Vệ sinh và khử khuẩn"
+        app:showAsAction="never"/>
+</menu>

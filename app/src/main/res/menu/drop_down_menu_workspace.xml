@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dropdown_menu_workspace_1"
+        android:title="Cho người lao động tại nơi làm việc"
+        app:showAsAction="never"
+            >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_workspace_2"
+        android:title="Cho người sử dụng lao động tại nơi làm việc"
+        app:showAsAction="never"
+        >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_workspace_3"
+        android:title="Vệ sinh khử khuẩn môi trường tại nơi làm việc"
+        app:showAsAction="never"
+        >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_workspace_4"
+        android:title="Cho người lao động phải đi công tác đến các khu vực có nguy cơ lây nhiễm COVID - 19"
+        app:showAsAction="never"
+        >
+    </item>
+</menu>
