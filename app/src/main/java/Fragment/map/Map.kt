@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -29,7 +30,6 @@ class Map: Fragment(), OnMapReadyCallback {
     }
     private lateinit var dashboardViewModel: MapViewModel
     private lateinit var binding:FragmentMapsBinding
-    private lateinit var vn : CountrysReport
     lateinit var scope: CoroutineScope;
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -68,15 +68,13 @@ class Map: Fragment(), OnMapReadyCallback {
                         val marker = cr.latLng?.let {
                             MarkerOptions().title(cr.country)
                                 .snippet(Gson().toJson(cr))
-                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.circle_image))
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.caution))
                                 .position(it)
                         }
                         googleMap?.addMarker(marker)
                     }
                 }
-//                if (googleMap != null) {
                     googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(allResp[158].latLng, 7F))
-//                }
                 try {
                     googleMap?.setInfoWindowAdapter(InfoAdapterCustom(layoutInflater))
                 }catch (e:IllegalStateException){}
