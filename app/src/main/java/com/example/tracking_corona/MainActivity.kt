@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewPager: ViewPager
+//    private lateinit var viewPager: ViewPager
     private lateinit var bottomNavigationView: BottomNavigationView
     var currentFragment : Fragment = Tracking()
 
@@ -23,51 +23,53 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportActionBar?.hide()
-        viewPager = findViewById(R.id.viewPager)
+        replaceFragment(Tracking())
 
-        val fragmentAdapter  =
-            ViewAdapter(supportFragmentManager)
-        viewPager.adapter= fragmentAdapter
-        viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
-            override fun onPageScrollStateChanged(state: Int) {
-            }
+//        viewPager = findViewById(R.id.viewPager)
 
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
-            }
-
-            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-            override fun onPageSelected(position: Int) {
-                bottomNavigationView.menu.getItem(position).isChecked = true
-            }
-
-        })
+//        val fragmentAdapter  =
+//            ViewAdapter(supportFragmentManager)
+//        viewPager.adapter= fragmentAdapter
+//        viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+//            override fun onPageScrollStateChanged(state: Int) {
+//            }
+//
+//            override fun onPageScrolled(
+//                position: Int,
+//                positionOffset: Float,
+//                positionOffsetPixels: Int
+//            ) {
+//            }
+//
+//            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+//            override fun onPageSelected(position: Int) {
+//                bottomNavigationView.menu.getItem(position).isChecked = true
+//            }
+//
+//        })
         bottomNavigationView =findViewById(R.id.navBottom)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId){
                 R.id.item_home ->{
-                    viewPager.currentItem =0
+//                    viewPager.currentItem =0
                     replaceFragment(Tracking())
                     currentFragment = Tracking()
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.item_list ->{
-                    viewPager.currentItem =1
+//                    viewPager.currentItem =1
                     replaceFragment(ListDetail())
                     currentFragment = ListDetail()
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.item_map ->{
-                    viewPager.currentItem =2
+//                    viewPager.currentItem =2
                     replaceFragment(Map())
                     currentFragment = Map()
                     return@setOnNavigationItemSelectedListener true
                 }
                 else ->{
-                    viewPager.currentItem =3
+//                    viewPager.currentItem =3
                     replaceFragment(info_treatment())
                     currentFragment = info_treatment()
                     return@setOnNavigationItemSelectedListener true

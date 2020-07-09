@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.example.tracking_corona.AffectedCountries
 import com.example.tracking_corona.R
 import com.example.tracking_corona.model.CountryModel
+import java.text.DecimalFormat
 import java.util.ArrayList
 
 class CountriesAdapter(val ctx: Context, val countryModelsList: List<CountryModel>) : ArrayAdapter<CountryModel?>(ctx, R.layout.list_custom_item, countryModelsList) {
@@ -31,13 +32,16 @@ class CountriesAdapter(val ctx: Context, val countryModelsList: List<CountryMode
         val affectedCt = view.findViewById<TextView>(R.id.affectedCt)
         val affectedCtDaily = view.findViewById<TextView>(R.id.activeCtDaily)
 
-        dealthCt.text = countryModelsListFiltered[position].deaths.toString()
-        dealthDaily.text = " (+".plus(countryModelsListFiltered[position].todayDeaths.toString())+")"
-        recoveredCt.text = countryModelsListFiltered[position].recovered.toString()
-        recoveredCtDaily.text = " (+".plus(countryModelsListFiltered[position].todayRecovered.toString())+")"
-        affectedCt.text = countryModelsListFiltered[position].cases.toString()
-        affectedCtDaily.text = " (+".plus(countryModelsListFiltered[position].todayCases.toString())+")"
-        tvCountryName.setText(countryModelsListFiltered[position].country)
+        val pattern : String = "###,###"
+        val decimalFormat : DecimalFormat = DecimalFormat(pattern)
+
+        dealthCt.text = decimalFormat.format(countryModelsListFiltered[position].deaths).toString()
+        dealthDaily.text = " (+".plus(decimalFormat.format(countryModelsListFiltered[position].todayDeaths).toString())+")"
+        recoveredCt.text = decimalFormat.format(countryModelsListFiltered[position].recovered).toString()
+        recoveredCtDaily.text = " (+".plus(decimalFormat.format(countryModelsListFiltered[position].todayRecovered).toString())+")"
+        affectedCt.text = decimalFormat.format(countryModelsListFiltered[position].cases).toString()
+        affectedCtDaily.text = " (+".plus(decimalFormat.format(countryModelsListFiltered[position].todayCases).toString())+")"
+        tvCountryName.text = countryModelsListFiltered[position].country
         Glide.with(ctx).load(countryModelsListFiltered[position].countryInfo.flag).into(imageView)
         return view
     }

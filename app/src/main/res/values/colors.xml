@@ -3,7 +3,10 @@
     <color name="colorPrimary2">#171e24</color>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#008577</color>
+    <color name="colorAccent1">#03DAC5</color>
+
+    <color name="colorpurple">#A154F2</color>
 
     <color name="casee">#FFBD4C</color>
     <color name="deal">#FF5959</color>

@@ -20,6 +20,7 @@ import com.example.tracking_corona.service.CountriesService
 import kotlinx.android.synthetic.main.fragment_tracking.*
 import kotlinx.coroutines.*
 import org.eazegraph.lib.models.PieModel
+import java.text.DecimalFormat
 
 
 class Tracking: Fragment() {
@@ -75,6 +76,7 @@ class Tracking: Fragment() {
                 CountriesService.getApi().getCountryVietNamYesterday()
             }
 
+
             setTextVn(vnResp, vnYesterdayResp);
             toggleAlarm.isChecked = false;
             toggleAlarm.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
@@ -86,28 +88,32 @@ class Tracking: Fragment() {
             })
         }
     }
-    private fun setTextVn(vnResp : CountryModel, vnYesterdayResp: CountryModel){
-        tvaffected.text = vnResp.cases.toString()
-        tvdeath.text = vnResp.deaths.toString()
-        tvrecovered.text = vnResp.recovered.toString()
-        tvactive.text = vnResp.active.toString()
-        tvserious.text = vnResp.critical.toString()
-        tvaffectedDaily.text = "+ ".plus(vnResp.todayCases.toString())
-        tvdeathDaily.text = "+ ".plus(vnResp.todayDeaths.toString())
-        tvrecoveredDaily.text = "+ ".plus(vnResp.todayRecovered.toString())
 
-        tvactiveDaily.text = "+ ".plus((vnResp.active - vnYesterdayResp.active).toString())
+    private fun setTextVn(vnResp : CountryModel, vnYesterdayResp: CountryModel){
+        val pattern : String = "###,###"
+        val decimalFormat : DecimalFormat = DecimalFormat(pattern)
+
+
+        tvaffected.text = decimalFormat.format(vnResp.cases).toString()
+        tvdeath.text = decimalFormat.format(vnResp.deaths).toString()
+        tvrecovered.text = decimalFormat.format(vnResp.recovered).toString()
+        tvactive.text = decimalFormat.format(vnResp.active).toString()
+        tvserious.text = decimalFormat.format(vnResp.critical).toString()
+        tvaffectedDaily.text = "+ ".plus(decimalFormat.format(vnResp.todayCases).toString())
+        tvdeathDaily.text = "+ ".plus(decimalFormat.format(vnResp.todayDeaths).toString())
+        tvrecoveredDaily.text = "+ ".plus(decimalFormat.format(vnResp.todayRecovered).toString())
+
 
         if(vnResp.active - vnYesterdayResp.active >= 0){
-            tvactiveDaily.text = "+ ".plus((vnResp.active - vnYesterdayResp.active).toString())
+            tvactiveDaily.text = "+ ".plus(decimalFormat.format(vnResp.active - vnYesterdayResp.active).toString())
         }else{
-            tvactiveDaily.text = (vnResp.active - vnYesterdayResp.active).toString()
+            tvactiveDaily.text = decimalFormat.format(vnResp.active - vnYesterdayResp.active).toString()
         }
 
         if(vnResp.critical - vnYesterdayResp.critical >= 0){
-            tvseriousDaily.text = "+ ".plus((vnResp.critical - vnYesterdayResp.critical).toString())
+            tvseriousDaily.text = "+ ".plus(decimalFormat.format(vnResp.critical - vnYesterdayResp.critical).toString())
         }else{
-            tvseriousDaily.text = (vnResp.critical - vnYesterdayResp.critical).toString()
+            tvseriousDaily.text = decimalFormat.format(vnResp.critical - vnYesterdayResp.critical).toString()
         }
         piechart.clearChart()
         piechart.addPieSlice(
@@ -125,27 +131,28 @@ class Tracking: Fragment() {
         piechart.startAnimation();
     }
     private fun setTextAll(allResp : Countries, allYesterdayResp: Countries){
-        tvaffected.text = allResp.cases.toString()
-        tvdeath.text = allResp.deaths.toString()
-        tvrecovered.text = allResp.recovered.toString()
-        tvactive.text = allResp.active.toString()
-        tvserious.text = allResp.critical.toString()
-        tvaffectedDaily.text = "+ ".plus(allResp.todayCases.toString())
-        tvdeathDaily.text = "+ ".plus(allResp.todayDeaths.toString())
-        tvrecoveredDaily.text = "+ ".plus(allResp.todayRecovered.toString())
+        val pattern : String = "###,###"
+        val decimalFormat : DecimalFormat = DecimalFormat(pattern)
 
-        tvactiveDaily.text = "+ ".plus((allResp.active - allYesterdayResp.active).toString())
+        tvaffected.text = decimalFormat.format(allResp.cases).toString()
+        tvdeath.text = decimalFormat.format(allResp.deaths).toString()
+        tvrecovered.text = decimalFormat.format(allResp.recovered).toString()
+        tvactive.text = decimalFormat.format(allResp.active).toString()
+        tvserious.text = decimalFormat.format(allResp.critical).toString()
+        tvaffectedDaily.text = "+ ".plus(decimalFormat.format(allResp.todayCases).toString())
+        tvdeathDaily.text = "+ ".plus(decimalFormat.format(allResp.todayDeaths).toString())
+        tvrecoveredDaily.text = "+ ".plus(decimalFormat.format(allResp.todayRecovered).toString())
 
         if(allResp.active - allYesterdayResp.active >= 0){
-            tvactiveDaily.text = "+ ".plus((allResp.active - allYesterdayResp.active).toString())
+            tvactiveDaily.text = "+ ".plus(decimalFormat.format(allResp.active - allYesterdayResp.active).toString())
         }else{
-            tvactiveDaily.text = (allResp.active - allYesterdayResp.active).toString()
+            tvactiveDaily.text = decimalFormat.format(allResp.active - allYesterdayResp.active).toString()
         }
 
         if(allResp.critical - allYesterdayResp.critical >= 0){
-            tvseriousDaily.text = "+ ".plus((allResp.critical - allYesterdayResp.critical).toString())
+            tvseriousDaily.text = "+ ".plus(decimalFormat.format(allResp.critical - allYesterdayResp.critical).toString())
         }else{
-            tvseriousDaily.text = (allResp.critical - allYesterdayResp.critical).toString()
+            tvseriousDaily.text = decimalFormat.format(allResp.critical - allYesterdayResp.critical).toString()
         }
         piechart.clearChart()
         piechart.addPieSlice(
