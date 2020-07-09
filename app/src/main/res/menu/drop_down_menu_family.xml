@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dropdown_menu_family_1"
+        android:title="Vệ sinh, khử khuẩn tại gia đinh"
+        app:showAsAction="never"
+        >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_family_2"
+        android:title="Vệ sinh khử khuẩn cho người cách ly tại nhà"
+        app:showAsAction="never"
+        >
+    </item>
+
+
+</menu>

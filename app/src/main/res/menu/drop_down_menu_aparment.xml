@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dropdown_menu_apartment_1"
+        android:title="Đối với ban quản lý/Ban quản trị/ Ban đại diện"
+        app:showAsAction="never"
+        >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_apartment_2"
+        android:title="Đối với người dân"
+        app:showAsAction="never"
+        >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_apartment_3"
+        android:title="Đối với người quản lý khu nhà"
+        app:showAsAction="never"
+        >
+    </item>
+    <item
+        android:id="@+id/dropdown_menu_apartment_4"
+        android:title="Vệ sinh, khử khuẩn tại chung cư"
+        app:showAsAction="never"
+        >
+    </item>
+</menu>

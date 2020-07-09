@@ -40,7 +40,8 @@ class AffectedCountries : AppCompatActivity(){
 
         loader.start()
         fetchData();
-
+        loader.stop()
+        loader.setVisibility(View.GONE)
 
         supportActionBar?.setTitle("Các quốc gia ảnh hưởng")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -83,8 +84,6 @@ class AffectedCountries : AppCompatActivity(){
 
             myCustomAdapter = CountriesAdapter(this@AffectedCountries, countryModelsList)
             listView.setAdapter(myCustomAdapter)
-            loader.stop()
-            loader.setVisibility(View.GONE)
         }
     }
 }
