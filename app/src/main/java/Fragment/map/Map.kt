@@ -31,7 +31,7 @@ class Map: Fragment(), OnMapReadyCallback {
     }
     private lateinit var dashboardViewModel: MapViewModel
     private lateinit var binding:FragmentMapsBinding
-    private lateinit var scope: CoroutineScope;
+    lateinit var scope: CoroutineScope;
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?, savedInstanceState: Bundle?): View? {
         dashboardViewModel = ViewModelProvider(activity!!).get(MapViewModel::class.java)
