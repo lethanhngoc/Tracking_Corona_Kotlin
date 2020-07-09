@@ -80,6 +80,7 @@ class info_treatment : Fragment() {
             popupMenu.show()
         }
 
+
         btn_guide_travel.setOnClickListener {
             visitActivityBrowser(GUIDE_TRAVEL_URL)
         }
